@@ -1,29 +1,23 @@
 package org.example;
 
-import org.example.crepusculo.Hombrelobo;
-import org.example.crepusculo.Humano;
-import org.example.crepusculo.Vampiro;
+import org.example.crepusculo.*;
 
-import java.util.List;
-
-import static org.example.crepusculo.Humano.humanos;
-
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Humano Bella = new Humano("Bella", 19, "femenino", "Estudiante", "bajo", "bueno");
-        Vampiro Eduard = new Vampiro("Eduard", 19, "masculino", "Estudiante", "experimentado", "leer el pensamiento", 500,true);
-        Hombrelobo Jacob = new Hombrelobo("Jacob",16,"masculino","Residente","Clan Black",false);
-        Humano Charlie = new Humano("Charlie", 48,"masculino","Jefe de Policía","regular","bueno");
+        Human bella = new Human("Bella", 19, "femenino", "Estudiante", "bajo", "bueno");
+        Vampire eduard = new Vampire("Eduard", 19, "masculino", "Estudiante", "experimentado", "leer el pensamiento", 500,true);
+        Werewolf jacob = new Werewolf("Jacob",16,"masculino","Residente","Clan Black",false);
+        Human charlie = new Human("Charlie", 48,"masculino","Jefe de Policía","regular","bueno");
 
-        System.out.println(Eduard.presentacion()); //esta en clase personaje
-        System.out.println(Bella.presentacion()); //esta en clase personaje
-        System.out.println(Jacob.presentacion()); //esta en clase personaje
+        System.out.println(eduard.presentation());                    
+        System.out.println(bella.presentation()); 
+        System.out.println(jacob.presentation()); 
+        System.out.println(charlie.presentation());
+        System.out.println(eduard.toEat()); 
 
-        System.out.println(Eduard.alimentarse()); //esta en clase vampiro
-
-
+        Vampire rosalie = new Vampire("Rosalie",24,"femenino","Estudiante","experimentado","rapidez",600,true);
+        VitalFunctions personajeVitalFunctions = rosalie;
+        System.out.println(rosalie.getName() + ": " + personajeVitalFunctions.toEat());
 
     }
 
